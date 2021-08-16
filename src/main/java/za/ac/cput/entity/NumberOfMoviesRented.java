@@ -7,7 +7,7 @@ package za.ac.cput.entity;
  */
 
 public class NumberOfMoviesRented {
-    private String userID;
+    private static String userID;
     private int rentalID;
     private int movieID;
     private int numMovies;
@@ -21,7 +21,7 @@ public class NumberOfMoviesRented {
 
     }
 
-    public String getUserID() {
+    public static String getUserID() {
         return userID;
     }
 

@@ -36,7 +36,7 @@ public class NumberOfMoviesRentedRepository implements INumberOfMoviesRented {
         @Override
         public NumberOfMoviesRented read(String movieID) {
             for (NumberOfMoviesRented r : numberOfMoviesRentedDB)
-                if (r.getUserID().equals(userID))
+                if (r.getUserID().equals(r.getUserID()))
                     return r;
             return null;
         }
@@ -54,7 +54,8 @@ public class NumberOfMoviesRentedRepository implements INumberOfMoviesRented {
 
         @Override
         public boolean delete(String movieID) {
-            NumberOfMoviesRented numberOfMoviesRentedToDelete = read(userID);
+            NumberOfMoviesRented numberOfMoviesRentedToDelete = read(movieID);
+
             if (numberOfMoviesRentedToDelete == null)
                 return false;
             numberOfMoviesRentedDB.remove(numberOfMoviesRentedToDelete);

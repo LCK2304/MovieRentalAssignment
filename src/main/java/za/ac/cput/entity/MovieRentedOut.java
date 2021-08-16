@@ -11,6 +11,7 @@ public class MovieRentedOut {
     private String movieID;
     private int quantity;
 
+
     private MovieRentedOut(MovieRentedOutBuilder MovieRentedOutBuilder) {
         this.movieID = MovieRentedOutBuilder.movieID;
         this.quantity = MovieRentedOutBuilder.quantity;
@@ -38,15 +39,16 @@ public class MovieRentedOut {
             return this;
         }
 
-        public MovieRentedOut build() {
-            return new MovieRentedOut(this);
-        }
+
         public MovieRentedOutBuilder copy(MovieRentedOut MovieRentedOut)
         {
             this.movieID = MovieRentedOut.movieID;
             this.quantity = MovieRentedOut.quantity;
 
             return this;
+        }
+        public MovieRentedOut build() {
+            return new MovieRentedOut(this);
         }
 
         @Override
